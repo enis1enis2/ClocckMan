@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modern Clock</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <header class="card-header">
+        <h1 class="title">Modern Clock</h1>
+        <div class="controls">
+          <label class="switch">
+            <input id="themeToggle" type="checkbox" aria-label="Toggle dark mode">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </header>
+
+      <section class="clock-area">
+        <div class="analog" id="analog">
+          <div class="dial">
+            <div id="hour" class="hand hour"></div>
+            <div id="minute" class="hand minute"></div>
+            <div id="second" class="hand second"></div>
+            <div class="center-dot"></div>
+          </div>
+        </div>
+
+        <div class="digital">
+          <div id="time" class="time">00:00:00</div>
+          <div id="date" class="date">Loading date...</div>
+        </div>
+      </section>
+
+      <footer class="card-footer">
+        <small>Built with Flask • Live local time</small>
+      </footer>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/clock.js') }}"></script>
+</body>
+</html>
